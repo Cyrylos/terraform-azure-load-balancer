@@ -1,10 +1,10 @@
 resource "azurerm_network_interface" "lb_vm_nic" {
-  name                = "lb_vm_nic_1"
+  name                = var.nic_name
   location            = var.location
   resource_group_name = var.resource_group
 
   ip_configuration {
-    name                          = "lb_vm_nic_1"
+    name                          = var.nic_name
     subnet_id                     = var.subnet_id
     private_ip_address_allocation = "Dynamic"
   }
@@ -36,13 +36,13 @@ resource "azurerm_linux_virtual_machine" "lb_vm" {
     version   = "latest"
   }
 
-  computer_name                   = "${var.instance_name_prefix}1"
+  computer_name                   = var.instance_name
   admin_username                  = "azureuser"
   disable_password_authentication = true
 
   admin_ssh_key {
     username   = "azureuser"
-    public_key = tls_private_key.lb_vm_key.public_key_openssh
+    public_key = var.pub_vm_key
   }
 
   boot_diagnostics {

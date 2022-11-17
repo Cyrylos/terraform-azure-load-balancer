@@ -35,19 +35,19 @@ resource "azurerm_lb_probe" "az_lb_hc" {
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "az_lb_bap_assoc1" {
-  network_interface_id    = azurerm_network_interface.lb_vm_nic_1.id
+  network_interface_id    = module.lb_vm_1.nic_id
   ip_configuration_name   = "lb_vm_nic_1"
   backend_address_pool_id = azurerm_lb_backend_address_pool.az_lb_bap.id
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "az_lb_bap_assoc2" {
-  network_interface_id    = azurerm_network_interface.lb_vm_nic_2.id
+  network_interface_id    = module.lb_vm_2.nic_id
   ip_configuration_name   = "lb_vm_nic_2"
   backend_address_pool_id = azurerm_lb_backend_address_pool.az_lb_bap.id
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "az_lb_bap_assoc3" {
-  network_interface_id    = azurerm_network_interface.lb_vm_nic_3.id
+  network_interface_id    = module.lb_vm_3.nic_id
   ip_configuration_name   = "lb_vm_nic_3"
   backend_address_pool_id = azurerm_lb_backend_address_pool.az_lb_bap.id
 }
