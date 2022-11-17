@@ -16,12 +16,12 @@ resource "azurerm_network_interface_security_group_association" "lb_vm_nic_nsg" 
 }
 
 resource "azurerm_linux_virtual_machine" "lb_vm" {
-  name                          = var.instance_name
-  location                      = var.location
-  resource_group_name           = var.resource_group
-  network_interface_ids         = [azurerm_network_interface.lb_vm_nic.id]
-  size                          = "Standard_B1s"
-  zone                          = "1"
+  name                  = var.instance_name
+  location              = var.location
+  resource_group_name   = var.resource_group
+  network_interface_ids = [azurerm_network_interface.lb_vm_nic.id]
+  size                  = "Standard_B1s"
+  zone                  = "1"
 
   os_disk {
     name                 = "OsDisk${var.instance_name}"

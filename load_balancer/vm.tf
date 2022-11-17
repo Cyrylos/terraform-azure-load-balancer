@@ -87,12 +87,12 @@ resource "tls_private_key" "lb_vm_key" {
 }
 
 resource "azurerm_linux_virtual_machine" "lb_vm_1" {
-  name                          = "${var.instance_name_prefix}1"
-  location                      = var.location
-  resource_group_name           = azurerm_resource_group.az_rg.name
-  network_interface_ids         = [azurerm_network_interface.lb_vm_nic_1.id]
-  size                          = "Standard_B1s"
-  zone                          = "1"
+  name                  = "${var.instance_name_prefix}1"
+  location              = var.location
+  resource_group_name   = azurerm_resource_group.az_rg.name
+  network_interface_ids = [azurerm_network_interface.lb_vm_nic_1.id]
+  size                  = "Standard_B1s"
+  zone                  = "1"
 
   os_disk {
     name                 = "OsDiskVm1"
@@ -121,12 +121,12 @@ resource "azurerm_linux_virtual_machine" "lb_vm_1" {
 }
 
 resource "azurerm_linux_virtual_machine" "lb_vm_2" {
-  name                          = "${var.instance_name_prefix}2"
-  location                      = var.location
-  resource_group_name           = azurerm_resource_group.az_rg.name
-  network_interface_ids         = [azurerm_network_interface.lb_vm_nic_2.id]
-  size                          = "Standard_B1s"
-  zone                          = "2"
+  name                  = "${var.instance_name_prefix}2"
+  location              = var.location
+  resource_group_name   = azurerm_resource_group.az_rg.name
+  network_interface_ids = [azurerm_network_interface.lb_vm_nic_2.id]
+  size                  = "Standard_B1s"
+  zone                  = "2"
 
   os_disk {
     name                 = "OsDiskVm2"
@@ -155,12 +155,12 @@ resource "azurerm_linux_virtual_machine" "lb_vm_2" {
 }
 
 resource "azurerm_linux_virtual_machine" "lb_vm_3" {
-  name                          = "${var.instance_name_prefix}3"
-  location                      = var.location
-  resource_group_name           = azurerm_resource_group.az_rg.name
-  network_interface_ids         = [azurerm_network_interface.lb_vm_nic_3.id]
-  size                          = "Standard_B1s"
-  zone                          = "3"
+  name                  = "${var.instance_name_prefix}3"
+  location              = var.location
+  resource_group_name   = azurerm_resource_group.az_rg.name
+  network_interface_ids = [azurerm_network_interface.lb_vm_nic_3.id]
+  size                  = "Standard_B1s"
+  zone                  = "3"
 
   os_disk {
     name                 = "OsDiskVm3"

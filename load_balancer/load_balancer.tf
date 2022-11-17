@@ -16,22 +16,22 @@ resource "azurerm_lb" "az_lb" {
   tags                = var.tags
 
   frontend_ip_configuration {
-    name                          = var.frontend_name
-    public_ip_address_id          = azurerm_public_ip.az_lb_pub_ip[0].id
+    name                 = var.frontend_name
+    public_ip_address_id = azurerm_public_ip.az_lb_pub_ip[0].id
   }
 }
 
 resource "azurerm_lb_backend_address_pool" "az_lb_bap" {
-  name                = "TerraLbBackend"
-  loadbalancer_id     = azurerm_lb.az_lb.id
+  name            = "TerraLbBackend"
+  loadbalancer_id = azurerm_lb.az_lb.id
 }
 
 resource "azurerm_lb_probe" "az_lb_hc" {
-  name                = "terra-lb-hc"
-  loadbalancer_id     = azurerm_lb.az_lb.id
-  protocol            = "Http"
-  port                = 80
-  request_path        = "/"
+  name            = "terra-lb-hc"
+  loadbalancer_id = azurerm_lb.az_lb.id
+  protocol        = "Http"
+  port            = 80
+  request_path    = "/"
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "az_lb_bap_assoc1" {
