@@ -197,13 +197,7 @@ resource "azurerm_virtual_machine_extension" "install_apache_vm1" {
 
   protected_settings = <<SETTINGS
   {
-    "commandToExecute": [
-    "sudo apt update",
-    "sudo apt install -y apache2",
-    "sudo sed -i 's/80/0.0.0.0:80/g' /etc/apache2/ports.conf",
-    "echo `hostname` > /var/www/html/index.html",
-    "sudo systemctl enable apache2",
-    "sudo systemctl start apache2"]
+    "commandToExecute": "sudo apt update  \n      sudo apt install -y apache2 \n      sudo sed -i 's/80/0.0.0.0:80/g' /etc/apache2/ports.conf \n      echo `hostname` > /var/www/html/index.html \n      sudo systemctl enable apache2 \n      sudo systemctl start apache2"
   }
   SETTINGS
 }
@@ -217,13 +211,7 @@ resource "azurerm_virtual_machine_extension" "install_apache_vm2" {
 
   protected_settings = <<SETTINGS
   {
-    "commandToExecute": [
-    "sudo apt update",
-    "sudo apt install -y apache2",
-    "sudo sed -i 's/80/0.0.0.0:80/g' /etc/apache2/ports.conf",
-    "echo `hostname` > /var/www/html/index.html",
-    "sudo systemctl enable apache2",
-    "sudo systemctl start apache2"]
+    "commandToExecute": "sudo apt update  \n      sudo apt install -y apache2 \n      sudo sed -i 's/80/0.0.0.0:80/g' /etc/apache2/ports.conf \n      echo `hostname` > /var/www/html/index.html \n      sudo systemctl enable apache2 \n      sudo systemctl start apache2"
   }
   SETTINGS
 }
@@ -237,13 +225,7 @@ resource "azurerm_virtual_machine_extension" "install_apache_vm3" {
 
   protected_settings = <<SETTINGS
   {
-    "commandToExecute": [
-    "sudo apt update",
-    "sudo apt install -y apache2",
-    "sudo sed -i 's/80/0.0.0.0:80/g' /etc/apache2/ports.conf",
-    "echo `hostname` > /var/www/html/index.html",
-    "sudo systemctl enable apache2",
-    "sudo systemctl start apache2"]
+    "commandToExecute": "sudo apt update  \n      sudo apt install -y apache2 \n      sudo sed -i 's/80/0.0.0.0:80/g' /etc/apache2/ports.conf \n      echo `hostname` > /var/www/html/index.html \n      sudo systemctl enable apache2 \n      sudo systemctl start apache2"
   }
   SETTINGS
 }
