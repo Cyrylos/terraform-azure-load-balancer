@@ -21,7 +21,7 @@ resource "azurerm_linux_virtual_machine" "lb_vm" {
   resource_group_name   = var.resource_group
   network_interface_ids = [azurerm_network_interface.lb_vm_nic.id]
   size                  = "Standard_B1s"
-  zone                  = "1"
+  zone                  = var.zone
 
   os_disk {
     name                 = "OsDisk${var.instance_name}"
